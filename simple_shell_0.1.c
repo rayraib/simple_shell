@@ -15,7 +15,7 @@ int main (void)
 
 	while (1)
 	{
-		if (write(1, "$ ", 2) == -1)
+		if (write(1, "sHELL$ ", 7) == -1)
 		{
 			perror(" ");
 		}
@@ -38,7 +38,7 @@ int main (void)
 		{
 			execve(array[0], array, NULL);
 			free(buffer);
-			perror(" ");
+			perror("sHELL");
 			exit(EXIT_FAILURE);
 		}
 		else
