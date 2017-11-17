@@ -13,6 +13,7 @@ int main (void)
 
 	while (1)
 	{
+		buffer = NULL;
 		if (write(1, "sHELL$ ", 7) == -1)
 			perror(" ");
 		if (getline(&buffer, &n, stdin) == -1)
@@ -25,17 +26,23 @@ int main (void)
 		if (array == NULL)
 		{
 			free(buffer);
+			free(array);
+			continue;
+		}
+		/*{
+			free(buffer);
 			perror(" ");
 			return (-1);
-		}
-		child_return = create_child(array);
+		}*/
+		child_return = create_child(array, buffer);
 		if (child_return == -1)
 		{
 			free(buffer);
-			free_array(array, token_cnt);
+			free(array);
 			perror(" ");
+			return (-1);
 		}
-		/*free(buffer);*/
+		free(buffer);
 		free_array(array, token_cnt);
 		perror(" ");
 	}
