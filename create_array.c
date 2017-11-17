@@ -2,7 +2,7 @@
 /**
  * create_array - creates a pointer to array of strings to be used to execute a command
  * @token_cnt: number of tokens
- * @buffer: pointer to string to tokenize
+ * @bufdfer: pointer to string to tokenize
  * Return: pointer to array of strings or NULL if failed to allocate space
  */
 char **create_array(int token_cnt, char *buffer)
