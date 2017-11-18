@@ -26,7 +26,7 @@ int not_valid(char *buffer, char *first_command, char **array)
 			return (-1);
 		}/* execution at child process was successfull, command found and executed */
 		free (buffer);
-		free (first_command);
+		/*free (first_command);*/
 		free (array);
 		free (st);
 		return (0);

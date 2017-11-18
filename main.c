@@ -47,8 +47,8 @@ int main(void)
 		}
 		if (not_valid(buffer, first_command, array) == 0)/*it was successfull, command executed */
 		{
-			free (first_command);
-			perror (first_command);
+		/*	free (first_command);
+			perror (first_command);*/
 			continue;	
 		}
 		find_command(index, first_command, array);/*find command and execute it>> BUFFER, FIRST_COMMAND, ARRAY*/
@@ -58,7 +58,7 @@ int main(void)
 		}
 	*/
 		free (buffer);
-		free (array);
+		free_array(token_counter, array);
 		free (first_command);
 	}
 	return (0);
