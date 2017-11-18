@@ -7,12 +7,11 @@
 void free_array(int token_cnt, char **array)
 {
 	(void) token_cnt;
-/*
-	while (array != NULL)
+/*	while (token_cnt >= 1)
 	{
 		free(array[token_cnt - 1]);
 		token_cnt--;
 	}
 */
-	free (array);
+	free(array);
 }

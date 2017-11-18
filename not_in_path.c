@@ -14,24 +14,25 @@ int not_valid(char *buffer, char *first_command, char **array)
 	st = malloc(sizeof(struct stat));
 	if (st == NULL)
 	{
-		free (st);
+		free(st);
 		return (-1);
 	}
-	if (stat (first_command, st) == 0)
+	if (stat(first_command, st) == 0)
 	{
 		child_return = create_child(array);
 		if (child_return == -1)/* failure at child process */
 		{
-			free (st);
+			free(st);
 			return (-1);
-		}/* execution at child process was successfull, command found and executed */
-		free (buffer);
+		}
+	/* execution at child process was successfull, command found and executed */
+		free(buffer);
 		/*free (first_command);*/
-		free (array);
-		free (st);
+		free(array);
+		free(st);
 		return (0);
 	}
 	/* stat failed, command not found */
-	free (st);
+	free(st);
 	return (-1);
 }

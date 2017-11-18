@@ -1,17 +1,17 @@
 #include "shell.h"
 /**
 * free_things - free the argument pointers
-* @dir: first argument
-* @cur_dir: second argument
+* @b: first argument
+* @d: second argument
 * @st: third argument
-* @path: fourth argument
+* @p: fourth argument
+* @f: fifth arguemnt to free
 */
 void free_things(char *b, char *d, struct stat *st, char *p, char *f)
 {
-	free (b);
-	free (d);
-	free (st);
-	free (p);
-	free (f);
+	free(b);
+	free(d);
+	free(st);
+	free(p);
+	free(f);
 }
-	

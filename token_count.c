@@ -4,7 +4,7 @@
  * @buffer: Pointer to string to tokenize
  * Return: number of tokens
  */
-int token_count (char *buffer)
+int token_count(char *buffer)
 {
 	char *string_copy = NULL;
 	char *token = NULL;
@@ -14,12 +14,12 @@ int token_count (char *buffer)
 	string_copy = _strdup(buffer);
 	if (string_copy == NULL)
 		return (-1);
-	token = strtok (string_copy, delim);
+	token = strtok(string_copy, delim);
 	while (token != NULL)
 	{
 		token = strtok(NULL, delim);
 		token_cnt++;
 	}
-	free (string_copy);
+	free(string_copy);
 	return (token_cnt);
 }

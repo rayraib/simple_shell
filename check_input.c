@@ -16,7 +16,7 @@ char *check_input()
 	if (getline(&buffer, &n, stdin) == -1)
 	{
 		write(1, "\n", 1);
-		free (buffer);
+		free(buffer);
 		return (NULL);
 	}
 	return (buffer);

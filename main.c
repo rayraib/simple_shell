@@ -6,7 +6,6 @@
 int main(void)
 {
 	char *buffer, *first_command = NULL;
-/*	char *first_command = NULL;*/
 	int token_counter;
 	char **array = NULL;
 	int index;/*, command_ret;*/
@@ -48,8 +47,6 @@ int main(void)
 		if (not_valid(buffer, first_command, array) == 0)/*it was successfull, command executed */
 		{
 			free (first_command);
-	/*
-			perror (first_command);*/
 			continue;	
 		}
 		find_command(index, first_command, array);/*find command and execute it>> BUFFER, FIRST_COMMAND, ARRAY*/
