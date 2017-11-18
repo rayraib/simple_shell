@@ -6,10 +6,10 @@
 * @st: third argument
 * @path: fourth argument
 */
-void free_things(char *d, char *cd, struct stat *st, char *p, char *f)
+void free_things(char *b, char *d, struct stat *st, char *p, char *f)
 {
+	free (b);
 	free (d);
-	free (cd);
 	free (st);
 	free (p);
 	free (f);

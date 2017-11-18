@@ -8,10 +8,9 @@ int find_command(int index, char *filename, char **array)
 {
 	char *buffer, *dir, *cur_dir, *path, *token, *f_arg;
 	char *delim = "=:\n";
-	int n, i, child_ret;
+	int child_ret;
 	struct stat *st = NULL;
 
-	n = i = 0;
 	buffer = cur_dir = path = token = f_arg = NULL;
 	path = _strdup(environ[index]);/*copy the PATH env varible string */
 	if (path == NULL)
@@ -35,7 +34,7 @@ int find_command(int index, char *filename, char **array)
 		free (st);
 		return (-1);
 	}
-	cur_dir = getcwd(buffer, n);/*get the current directory of the user*/
+/*	cur_dir = getcwd(buffer, n);*//*get the current directory of the user*/
 	/* CHECK CUR_DIR ?? */
 	do
 	{
@@ -44,15 +43,16 @@ int find_command(int index, char *filename, char **array)
 		if (stat (f_arg, st) == 0)
 		{
 			array[0] = f_arg;	
-			child_ret = create_child(array, buffer);
+			child_ret = create_child(array);
 			if (child_ret == -1)
 				return (-1); 
-			free_things(dir, cur_dir, st, path, f_arg);
+			free_things(buffer, dir, st, path, f_arg);
 				return (0);
 		}
 		token = strtok(NULL, delim);/* filename not found yet, tokenize the next directory to check for filename again*/
 	} while (token != NULL);
-	chdir(cur_dir);/*change back to previous directory of user*/
-	free_things(dir, cur_dir, st, path, f_arg);
+/*	chdir(cur_dir); *//*change back to previous directory of user*/
+	perror ("CNT ");
+	free_things(buffer, dir, st, path, f_arg);
 	return (-1);
 }
