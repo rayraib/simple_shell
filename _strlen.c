@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * _strlen - return the lenght of a string
+ * _strlen - calculate the length of a string
  * @s: string
  * Return: Always i.
  */

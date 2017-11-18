@@ -2,7 +2,7 @@
 /**
 * create_array - create an array of pointers to string(commands from stdin)
 * @token_cnt: Size of the array to be allocated
-* @buffer: Pointer to string of chars(commands from stdin)
+* @buffer: Pointer to string of chars(commands frm stdin)
 * Return: Pointer to the array of pointers
 */
 char **create_array(int token_cnt, char *buffer)

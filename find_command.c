@@ -10,12 +10,7 @@ int find_command(int index, char *filename, char **array)
 	char *delim = "=:\n";
 	int n, i, child_ret;
 	struct stat *st = NULL;
-	/*char *cur_dir = NULL;
-	char *path;
-	char *token = NULL;
-	char *dir;
-	char *f_arg;
-*/
+
 	n = i = 0;
 	buffer = cur_dir = path = token = f_arg = NULL;
 	path = _strdup(environ[index]);/*copy the PATH env varible string */

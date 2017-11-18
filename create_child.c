@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * create_child - creates a child process and executes a command and its arguments
+ * create_child - creates child process and executes a command and its arguments
  * @array: pointer to array of strings
  * Return: 0 if Success, -1 if failure
  */

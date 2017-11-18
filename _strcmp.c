@@ -2,7 +2,6 @@
 #include <stdio.h>
 /**
  * _strcmp - function that compares two strings
- *
  * @s1: string to compare
  * @s2: string to compare/
  * Return: An integer

@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
-* free_things - frees the argument pointers
+* free_things - free the argument pointers
 * @dir: first argument
 * @cur_dir: second argument
 * @st: third argument

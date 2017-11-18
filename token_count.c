@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  * token_count - counts the number of tokens
- * @buffer: the buffer to tokenize
+ * @buffer: Pointer to string to tokenize
  * Return: number of tokens
  */
 int token_count (char *buffer)

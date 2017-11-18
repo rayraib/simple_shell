@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * _strcpy - copies one string into another array
+ * _strcpy - copy one string into another array
  * @dest: pointer to an array
  * @src: pointer to a string
  * Return: Always 0.

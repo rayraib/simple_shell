@@ -1,8 +1,7 @@
 #include "shell.h"
 /**
-* main - entry point
-*
-*
+* main - entry point to a basic functional shell
+* Return: 0 succes, otherwise -1
 */
 int main(void)
 {

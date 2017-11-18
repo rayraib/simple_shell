@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
-* exec_path - concatenates two string with '/' in between, null byte terminated
+* exec_path - concatenates two string with '/' in between, is null byte terminated
 * @dir: first string to concatenate
 * @filename: second string to concatenate
 * Return: pointer to the new concatenated string, NULL if failure

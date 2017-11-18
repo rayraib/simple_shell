@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
 * check_input - Checks for input from stdin
-* Return: Pointer to buffer with input string, or NULL
+* Return: Pointer to a buffer with input string, or NULL
 */
 char *check_input()
 {
