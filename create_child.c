@@ -18,7 +18,7 @@ int create_child (char **array)
 	if (child_pid == 0)
 	{
 		execve(array[0], array, NULL);
-		perror(" ");
+		perror("execve failed inside create_child ");
 		exit(-1);
 	}
 	else

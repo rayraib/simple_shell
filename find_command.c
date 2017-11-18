@@ -50,9 +50,11 @@ int find_command(int index, char *filename, char **array)
 				return (0);
 		}
 		token = strtok(NULL, delim);/* filename not found yet, tokenize the next directory to check for filename again*/
+		free (dir);
+		free (f_arg);
 	} while (token != NULL);
 /*	chdir(cur_dir); *//*change back to previous directory of user*/
-	perror ("CNT ");
+	perror ("CNT in find_command ");
 	free_things(buffer, dir, st, path, f_arg);
 	return (-1);
 }

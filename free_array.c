@@ -6,13 +6,13 @@
 */
 void free_array(int token_cnt, char **array)
 {
-	/*
+	(void) token_cnt;
+/*
 	while (array != NULL)
 	{
 		free(array[token_cnt - 1]);
 		token_cnt--;
 	}
-	*/
-	printf("token counter :   %d\n", token_cnt);
+*/
 	free (array);
 }

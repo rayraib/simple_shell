@@ -22,7 +22,7 @@ int main(void)
 		index = find_path();/*index of PATH varible::/BUFFER */
 		if (index == -1)
 		{
-			perror(" ");
+			perror("path not found in main ");
 			continue;
 		}
 		first_command = get_command(buffer);/*get the first argument/ BUFFER, FIRST_COMMAND */
@@ -36,7 +36,7 @@ int main(void)
 		{
 			free (buffer);
 			free (first_command);
-			printf("something here\n");
+			printf("something here in main\n");
 		}
 		array = create_array(token_counter, buffer);/*array of pointers to args>> BUFFER, FIRST_cOMMAND, ARRAY*/
 		if (array == NULL)
@@ -47,7 +47,8 @@ int main(void)
 		}
 		if (not_valid(buffer, first_command, array) == 0)/*it was successfull, command executed */
 		{
-		/*	free (first_command);
+			free (first_command);
+	/*
 			perror (first_command);*/
 			continue;	
 		}
