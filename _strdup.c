@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * _strdup - copies string to a new mememory location
+ * _strdup - copy string to a new mememory location
  * @file: pointer to string that is to be copied
  * Return: pointer to newly allocated memory location
  */

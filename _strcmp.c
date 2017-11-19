@@ -2,7 +2,6 @@
 #include <stdio.h>
 /**
  * _strcmp - function that compares two strings
- *
  * @s1: string to compare
  * @s2: string to compare/
  * Return: An integer
@@ -20,4 +19,15 @@ int _strcmp(char *s1, char *s2)
 	}
 	return (s1[i] - s2[i]);
 }
+/*
+int main()
+{
+	char *a = "exit\n";
+	char *b = "exit";
+	int result;
 
+	result = _strcmp(a, b);
+	printf("result: %d\n", result);
+	return (0);
+}
+*/

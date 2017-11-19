@@ -3,7 +3,7 @@
 * find_path - finds the PATH environment variable
 * Return: index of PATH variable if success, otherwise -1
 */
-int find_path()
+int find_path(void)
 {
 	int i, j;
 	char *a = "PATH";

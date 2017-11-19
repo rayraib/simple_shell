@@ -1,56 +1,49 @@
 #include "shell.h"
 /**
-* main - entry point
-*
-*
+* main - entry point to a basic functional shell
+* Return: 0 succes, otherwise -1
 */
 int main(void)
 {
-	char *buffer = NULL;
-	char *first_command = NULL;
+	char *buffer, *first_command = NULL;
 	int token_counter;
 	char **array = NULL;
-	int index;
-	int command_ret;
-	
+	int index, not_valid_ret;/*, command_ret;*/
+
 	while (1)
 	{
-		buffer = check_input();
+		buffer = check_input();/*gets arguments from stdin*/
 		if (buffer == NULL)
 		{
-			free (buffer);
+			free(buffer);
 			return (-1);
 		}
-		index = find_path();
+		index = find_path();/*index of PATH varible*/
 		if (index == -1)
-		{
-			perror(" ");
 			continue;
-		}
-		first_command = get_command(buffer);
+		first_command = get_command(buffer);/*get the first argument*/
 		if (first_command == NULL)
-		{
 			continue;
-		}
-		token_counter = token_count(buffer);
+		token_counter = token_count(buffer);/*number of args passed*/
 		if (token_counter == -1)
 		{
-			printf("something here\n");
+			free(buffer);
+			free(first_command);
 		}
-		array = create_array(token_counter, buffer);
+		array = create_array(first_command, token_counter, buffer);
+								/*array of pointers to args*/
 		if (array == NULL)
-		{
 			return (-1);
-		}
-		command_ret = find_command(index, first_command, array);
-		if (command_ret == -1)
+		not_valid_ret = not_valid(token_counter, buffer, first_command, array);/*command executed */
+		if (not_valid_ret == 0 || not_valid_ret == 1)
 		{
-			perror(" ");
+			free(first_command);
+			continue;
 		}
-		if (not_valid(buffer, first_command, array) == 0)
-		{
-			free (buffer);
-		}
+		find_command(index, first_command, array);/*find cmmnd & exec*/
+		free(buffer);
+		free_array(token_counter, array);
+		free(first_command);
 	}
 	return (0);
 }

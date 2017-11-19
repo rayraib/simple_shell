@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
-* exec_path - concatenates two string with '/' in between, null byte terminated
+* exec_path - concatenates two string with '/' in between, '\0' terminated
 * @dir: first string to concatenate
 * @filename: second string to concatenate
 * Return: pointer to the new concatenated string, NULL if failure
@@ -19,13 +19,13 @@ char *exec_path(char *dir, char *filename)
 		return (NULL);
 	for (i = 0; dir[i] != '\0'; i++)
 	{
-		f_arg[i] = dir[i];	
+		f_arg[i] = dir[i];
 	}
 	f_arg[i] = '/';
 	i++;
 	for (j = 0; filename[j] != '\0'; j++)
 	{
-		f_arg[i] = filename[j];	
+		f_arg[i] = filename[j];
 		i++;
 	}
 	f_arg[i] = '\0';

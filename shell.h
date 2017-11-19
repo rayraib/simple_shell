@@ -7,7 +7,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-int not_valid(char *buffer, char *first_command, char **array);
+void err_msg(char *filename);
+int not_valid(int token_cnt, char *buffer, char *f_com, char **array);
 char *exec_path(char *dir, char *filename);
 extern char **environ;
 int _strlen(char *s);
@@ -18,10 +19,9 @@ int find_command(int index, char *filename, char **array);
 char  *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *s);
-void free_array(char **grid, int height);
-int create_child(char **array, char *buffer);
+int create_child(char **array);
 int token_count(char *buffer);
-char **create_array(int token_cnt, char *buffer);
-void free_array(char **grid, int height);
-void free_things(char *d, char *cd, struct stat *st, char *p, char *f);
+char **create_array(char *first_com, int token_cnt, char *buffer);
+void free_array(int token_cnt, char **array);
+void free_things(char *b, char *d, struct stat *st, char *p, char *f);
 #endif
