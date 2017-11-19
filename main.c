@@ -24,12 +24,9 @@ int main(void)
 		first_command = get_command(buffer);/*get the first argument*/
 		if (first_command == NULL)
 			continue;
-		token_counter = token_count(buffer);/*number of args passed*/
+		token_counter = token_count(first_command, buffer);/*number of args passed*/
 		if (token_counter == -1)
-		{
-			free(buffer);
-			free(first_command);
-		}
+			continue;
 		array = create_array(first_command, token_counter, buffer);
 								/*array of pointers to args*/
 		if (array == NULL)
