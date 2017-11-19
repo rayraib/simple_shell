@@ -1,5 +1,6 @@
 #include "shell.h"
 char *get_first_dir(char *path);
+void err_msg(char *filename);
 void final_free(char *buffer, struct stat *st, char *path);
 /**
 * find_command - splits directory, goes into and checks for filename
@@ -46,8 +47,10 @@ int find_command(int index, char *filename, char **array)
 		free(dir);
 		free(f_arg);
 	} while (token != NULL);
-	perror("CNT in find_command ");
-	final_free(buffer, st, path);
+	err_msg(filename);	
+/*	write(1,filename, _strlen(filename));
+	perror(" ");
+	final_free(buffer, st, path);*/
 	return (-1);
 }
 /**
@@ -84,4 +87,22 @@ void final_free(char *buffer, struct stat *st, char *path)
 	free(buffer);
 	free(st);
 	free(path);
+}
+/**
+* err_msg - prints message to stdou
+* @filename: pointer to char string
+*/
+void err_msg(char *filename)
+{
+	if (filename[0] == '/')
+	{
+		write(1, "-bash: ",7);
+		write(1, filename, _strlen(filename));
+		perror(" ");
+	}
+	else
+	{
+		write(1, filename, _strlen(filename));
+		write(1, ": command not found\n", 20);
+	}
 }
