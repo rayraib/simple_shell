@@ -1,6 +1,6 @@
 #include "shell.h"
-void check_builtin(char *buffer);
-void print_env(void);
+/*void check_builtin(char *buffer);
+void print_env(void);*/
 /**
 * check_input - Checks for input from stdin
 * Return: Pointer to a buffer with input string, or NULL
@@ -21,13 +21,14 @@ char *check_input()
 		free(buffer);
 		return (NULL);
 	}
-	check_builtin(buffer);
+	check4builtin(buffer);
+	/*check_builtin(buffer);*/
 	return (buffer);
 }
 /**
 * check_builtin - checks for builtins and call that fuctionn
 * @buffer:pointer to string of args
-*/
+*//*
 void check_builtin(char *buffer)
 {
 	char *exit_b = "exit\n";
@@ -41,10 +42,10 @@ void check_builtin(char *buffer)
 	else if (_strcmp(buffer, env_b) == 0)
 		print_env();
 
-}
+}*/
 /**
 * print_env - prints the environment variable to stdou
-*/
+*//*
 void print_env(void)
 {
 	int i  = 0;
@@ -57,4 +58,4 @@ void print_env(void)
 		if (write(1, "\n", 1) == -1)
 			perror(" ");
 	}
-}
+}*/

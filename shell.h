@@ -7,6 +7,14 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
+typedef struct run_built
+{
+	char *builtin;
+	void (*builtcmd)(char *buffer);
+} buil_t;
+void check4builtin(char *buffer);
+void _my_exit(char *buffer);
+void _print_env(char *buffer);
 void err_msg(char *filename);
 int not_valid(int token_cnt, char *buffer, char *f_com, char **array);
 char *exec_path(char *dir, char *filename);
