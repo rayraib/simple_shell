@@ -3,12 +3,12 @@
 * main - entry point to a basic functional shell
 * Return: 0 succes, otherwise -1
 */
-int main(void)
+int main(int ac, char **argv)
 {
 	char *buffer, *first_command = NULL;
-	int token_counter;
 	char **array = NULL;
-	int index, not_valid_ret;/*, command_ret;*/
+	int token_counter, index, not_valid_ret;/*, command_ret;*/
+	(void) ac;
 
 	while (1)
 	{
@@ -35,7 +35,7 @@ int main(void)
 			free(first_command);
 			continue;
 		}
-		find_command(index, first_command, array);/*find cmmnd & exec*/
+		find_command(argv[0], index, first_command, array);/*find cmmnd & exec*/
 		free(buffer);
 		free_array(token_counter, array);
 		free(first_command);

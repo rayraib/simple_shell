@@ -9,7 +9,7 @@ void final_free(char *buffer, struct stat *st, char *path);
 * @array: pointer to an array of poitners to char
 * Return: success 0, otherwise -1
 */
-int find_command(int index, char *filename, char **array)
+int find_command(char *arg, int index, char *filename, char **array)
 {
 	char *buffer, *dir, *cur_dir, *path, *token, *f_arg;
 	char *delim = "=:\n";
@@ -48,8 +48,8 @@ int find_command(int index, char *filename, char **array)
 		free(f_arg);
 	} while (token != NULL);
 	free(array[0]);
-	perror("./sHELL$");
 	final_free(buffer, st, path);
+	err_msg(arg);
 	return (-1);
 }
 /**
@@ -90,8 +90,9 @@ void final_free(char *buffer, struct stat *st, char *path)
 /**
 * err_msg - prints message to stdou
 * @filename: pointer to char string
-void err_msg()
-{
-	(void) filename;
-}
 */
+void err_msg(char *arg)
+{
+	write(2, arg, _strlen(arg));
+	perror(" ");
+}

@@ -15,7 +15,7 @@ typedef struct run_built
 void check4builtin(char *buffer);
 void _my_exit(char *buffer);
 void _print_env(char *buffer);
-void err_msg(char *filename);
+void err_msg(char *arg);
 int not_valid(int token_cnt, char *buffer, char *f_com, char **array);
 char *exec_path(char *dir, char *filename);
 extern char **environ;
@@ -23,7 +23,7 @@ int _strlen(char *s);
 char *check_input(void);
 int find_path(void);
 char *get_command(char *buffer);
-int find_command(int index, char *filename, char **array);
+int find_command(char *arg, int index, char *filename, char **array);
 char  *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *s);
