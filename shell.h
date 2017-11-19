@@ -20,7 +20,7 @@ char  *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *s);
 int create_child(char **array);
-int token_count(char *buffer);
+int token_count(char*f_com, char *buffer);
 char **create_array(char *first_com, int token_cnt, char *buffer);
 void free_array(int token_cnt, char **array);
 void free_things(char *b, char *d, struct stat *st, char *p, char *f);

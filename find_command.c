@@ -1,6 +1,6 @@
 #include "shell.h"
 char *get_first_dir(char *path);
-void err_msg(char *filename);
+/*void err_msg(char *filename);*/
 void final_free(char *buffer, struct stat *st, char *path);
 /**
 * find_command - splits directory, goes into and checks for filename
@@ -48,7 +48,7 @@ int find_command(int index, char *filename, char **array)
 		free(f_arg);
 	} while (token != NULL);
 	free(array[0]);
-	err_msg(filename);
+	perror("./sHELL$");
 	final_free(buffer, st, path);
 	return (-1);
 }
@@ -90,17 +90,8 @@ void final_free(char *buffer, struct stat *st, char *path)
 /**
 * err_msg - prints message to stdou
 * @filename: pointer to char string
-*/
-void err_msg(char *filename)
+void err_msg()
 {
-	if (filename[0] == '/')
-	{
-		write(0, filename, _strlen(filename));
-		perror(" ");
-	}
-	else
-	{
-		write(1, filename, _strlen(filename));
-		perror(" ");
-	}
+	(void) filename;
 }
+*/
