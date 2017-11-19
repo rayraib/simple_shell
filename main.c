@@ -54,6 +54,7 @@ int main(void)
 		find_command(index, first_command, array);/*find cmmnd & exec*/
 		free(buffer);
 		free_array(token_counter, array);
+		/*free(array[0]);*/
 		free(first_command);
 	}
 	return (0);

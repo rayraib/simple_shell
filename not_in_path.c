@@ -28,7 +28,6 @@ int not_valid(int token_counter, char *buffer, char *first_command, char **array
 			return (1);
 		}
 		free(buffer);
-		/*free (first_command);*/
 		free(array[0]);
 		free_array(token_counter, array);
 		free(st);

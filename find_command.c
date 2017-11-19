@@ -40,7 +40,7 @@ int find_command(int index, char *filename, char **array)
 			array[0] = f_arg;
 			child_ret = create_child(array);
 			if (child_ret == -1)
-				return (-1);
+				return (1);
 			free_things(buffer, dir, st, path, f_arg);
 				return (0);
 		}
@@ -48,6 +48,7 @@ int find_command(int index, char *filename, char **array)
 		free(dir);
 		free(f_arg);
 	} while (token != NULL);
+	free(array[0]);
 	err_msg(filename);	
 	final_free(buffer, st, path);
 	return (-1);
