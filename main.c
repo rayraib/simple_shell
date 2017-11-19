@@ -20,30 +20,20 @@ int main(void)
 		}
 		index = find_path();/*index of PATH varible*/
 		if (index == -1)
-		{
-			perror("path not found in main ");
 			continue;
-		}
 		first_command = get_command(buffer);/*get the first argument*/
 		if (first_command == NULL)
-		{
-			free(buffer);
 			continue;
-		}
 		token_counter = token_count(buffer);/*number of args passed*/
 		if (token_counter == -1)
 		{
 			free(buffer);
 			free(first_command);
 		}
-		array = create_array(token_counter, buffer);
+		array = create_array(first_command, token_counter, buffer);
 								/*array of pointers to args*/
 		if (array == NULL)
-		{
-			free(buffer);
-			free(first_command);
 			return (-1);
-		}
 		not_valid_ret = not_valid(token_counter, buffer, first_command, array);/*command executed */
 		if (not_valid_ret == 0 || not_valid_ret == 1)
 		{

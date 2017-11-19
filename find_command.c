@@ -95,13 +95,12 @@ void err_msg(char *filename)
 {
 	if (filename[0] == '/')
 	{
-		write(1, "-bash: ", 7);
-		write(1, filename, _strlen(filename));
-		perror(":");
+		write(0, filename, _strlen(filename));
+		perror(" ");
 	}
 	else
 	{
 		write(1, filename, _strlen(filename));
-		write(1, ": command not found\n", 20);
+		perror(" ");
 	}
 }

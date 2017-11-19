@@ -14,12 +14,14 @@ char *get_command(char *buffer)
 	copy_string = _strdup(buffer);
 	if (copy_string == NULL)
 	{
+		free(buffer);
 		free(copy_string);
 		return (NULL);
 	}
 	token = strtok(copy_string, delim);
 	if (token == NULL)
 	{
+		free(buffer);
 		free(copy_string);
 		return (NULL);
 	}
