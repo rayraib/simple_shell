@@ -18,7 +18,7 @@ int create_child(char **array)
 	if (child_pid == 0)
 	{
 		execve(array[0], array, NULL);
-		err_msg(array[0]);
+		perror("./sHELL$");
 		exit(-1);
 	}
 	else
