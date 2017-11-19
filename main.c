@@ -14,10 +14,8 @@ int main(void)
 	{
 		buffer = check_input();/*gets arguments from stdin*/
 		if (buffer == NULL)
-		{
-			free(buffer);
+		/*	free(buffer);*/
 			return (-1);
-		}
 		index = find_path();/*index of PATH varible*/
 		if (index == -1)
 			continue;
