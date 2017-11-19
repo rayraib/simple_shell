@@ -2,11 +2,12 @@
 /**
 * not_valid - checks if an argument is an executable file path
 * @buffer: pointere to string of arguments
-* @first_command: pointer to string argument with the executable string
+* @f_com: pointer to string argument with the executable string
 * @array: double pointer to array of pointers to string
+* @token_cnt: Count of tokens
 * Return: 0 succes, otherwise -1 for failure
 */
-int not_valid(int token_counter, char *buffer, char *first_command, char **array)
+int not_valid(int token_cnt, char *buffer, char *f_com, char **array)
 {
 	struct stat *st;
 	int child_return;
@@ -17,19 +18,19 @@ int not_valid(int token_counter, char *buffer, char *first_command, char **array
 		free(st);
 		return (-1);
 	}
-	if (stat(first_command, st) == 0)
+	if (stat(f_com, st) == 0)
 	{
 		child_return = create_child(array);
 		if (child_return == -1)/* failure at child process */
 		{
 			free(st);
-			free (array[0]);
-			free_array(token_counter, array);
+			free(array[0]);
+			free_array(token_cnt, array);
 			return (1);
 		}
 		free(buffer);
 		free(array[0]);
-		free_array(token_counter, array);
+		free_array(token_cnt, array);
 		free(st);
 		return (0);
 	}

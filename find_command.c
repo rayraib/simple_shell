@@ -15,7 +15,6 @@ int find_command(int index, char *filename, char **array)
 	char *delim = "=:\n";
 	int child_ret;
 	struct stat *st = NULL;
-	(void) index;
 
 	buffer = cur_dir = path = token = f_arg = NULL;
 	path = _strdup(environ[index]);/*copy the PATH env varible string */
@@ -49,7 +48,7 @@ int find_command(int index, char *filename, char **array)
 		free(f_arg);
 	} while (token != NULL);
 	free(array[0]);
-	err_msg(filename);	
+	err_msg(filename);
 	final_free(buffer, st, path);
 	return (-1);
 }
@@ -96,7 +95,7 @@ void err_msg(char *filename)
 {
 	if (filename[0] == '/')
 	{
-		write(1, "-bash: ",7);
+		write(1, "-bash: ", 7);
 		write(1, filename, _strlen(filename));
 		perror(" ");
 	}
