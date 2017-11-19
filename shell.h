@@ -7,7 +7,8 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
-int not_valid(char *buffer, char *first_command, char **array);
+void err_msg(char *filename);
+int not_valid(int token_counter, char *buffer, char *first_command, char **array);
 char *exec_path(char *dir, char *filename);
 extern char **environ;
 int _strlen(char *s);

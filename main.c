@@ -8,7 +8,7 @@ int main(void)
 	char *buffer, *first_command = NULL;
 	int token_counter;
 	char **array = NULL;
-	int index;/*, command_ret;*/
+	int index, not_valid_ret;/*, command_ret;*/
 
 	while (1)
 	{
@@ -45,7 +45,8 @@ int main(void)
 			free(first_command);
 			return (-1);
 		}
-		if (not_valid(buffer, first_command, array) == 0)/*command executed */
+		not_valid_ret = not_valid(token_counter, buffer, first_command, array);/*command executed */
+		if (not_valid_ret == 0 || not_valid_ret == 1)
 		{
 			free(first_command);
 			continue;

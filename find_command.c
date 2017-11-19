@@ -36,6 +36,7 @@ int find_command(int index, char *filename, char **array)
 		f_arg = exec_path(dir, filename);
 		if (stat(f_arg, st) == 0)
 		{
+			free(array[0]);
 			array[0] = f_arg;
 			child_ret = create_child(array);
 			if (child_ret == -1)
@@ -48,9 +49,7 @@ int find_command(int index, char *filename, char **array)
 		free(f_arg);
 	} while (token != NULL);
 	err_msg(filename);	
-/*	write(1,filename, _strlen(filename));
-	perror(" ");
-	final_free(buffer, st, path);*/
+	final_free(buffer, st, path);
 	return (-1);
 }
 /**

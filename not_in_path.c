@@ -6,7 +6,7 @@
 * @array: double pointer to array of pointers to string
 * Return: 0 succes, otherwise -1 for failure
 */
-int not_valid(char *buffer, char *first_command, char **array)
+int not_valid(int token_counter, char *buffer, char *first_command, char **array)
 {
 	struct stat *st;
 	int child_return;
@@ -23,12 +23,14 @@ int not_valid(char *buffer, char *first_command, char **array)
 		if (child_return == -1)/* failure at child process */
 		{
 			free(st);
-			return (-1);
+			free (array[0]);
+			free_array(token_counter, array);
+			return (1);
 		}
-	/* execution at child process was successfull, command found and executed */
 		free(buffer);
 		/*free (first_command);*/
-		free(array);
+		free(array[0]);
+		free_array(token_counter, array);
 		free(st);
 		return (0);
 	}
