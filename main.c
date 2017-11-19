@@ -35,7 +35,6 @@ int main(void)
 		{
 			free(buffer);
 			free(first_command);
-			printf("something here in main\n");
 		}
 		array = create_array(token_counter, buffer);
 								/*array of pointers to args*/

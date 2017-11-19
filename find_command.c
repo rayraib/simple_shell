@@ -97,7 +97,7 @@ void err_msg(char *filename)
 	{
 		write(1, "-bash: ", 7);
 		write(1, filename, _strlen(filename));
-		perror(" ");
+		perror(":");
 	}
 	else
 	{

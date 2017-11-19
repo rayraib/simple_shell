@@ -34,7 +34,10 @@ void check_builtin(char *buffer)
 	char *env_b = "env\n";
 
 	if (_strcmp(buffer, exit_b) == 0)
+	{
+		free(buffer);
 		exit(0);
+	}
 	else if (_strcmp(buffer, env_b) == 0)
 		print_env();
 
