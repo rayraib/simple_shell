@@ -1,0 +1,79 @@
+.TH _SIMPLE_SHELL
+
+.SH NAME
+
+_simple_shell - command interpreter (shell)
+
+.SH SYNOPSIS
+
+.B ./hsh
+[command] [option] [argument]
+.SH DESCRIPTION
+
+.B simple_shell
+is a command-line interpreter or shell that provides a traditional Unix-like command line user interface. Users direct the operation of the computer by entering commands as text for a command line interpreter to execute.
+
+.SH OVERVIEW
+
+The simple_shell is a command that reads lines from the terminal, interprets them, and executes them. The commands being run are either commands built into the shell or commands that reside in the environment variable PATH. If the string that is being passed corresponds to such commands, the simple_shell will create a child process to execute the command, otherwise it prints an error and returns to the prompt.
+
+.SH INVOCATION
+The simple shell has to be compiled using GCC with the following flags: gcc -Wall -Werror -Wextra -pedantic *.c
+.br
+After compilation, run the output file and enter the commands you wish to run.
+
+.SH BUILTINS
+The following are builtins that have been implemented in simple_shell
+
+.B env
+- prints the environment
+
+.B exit
+- exits simple_shell
+
+.SH EXAMPLE_CODE
+$ ./hsh
+.br
+sHell$ ls -l
+.br
+total 100
+.br
+-rw-rw-r-- 1 vagrant vagrant  1087 Nov 19 19:20 LICENSE.md
+.br
+-rw-rw-r-- 1 vagrant vagrant   662 Nov 19 19:20 README.md
+.br
+-rw-rw-r-- 1 vagrant vagrant   492 Nov 19 19:20 _strcmp.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   294 Nov 19 19:20 _strcpy.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   389 Nov 19 19:20 _strdup.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   199 Nov 19 19:20 _strlen.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   331 Nov 19 20:08 builtins.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   316 Nov 19 20:06 check4builtin.c
+.br
+-rw-rw-r-- 1 vagrant vagrant  1071 Nov 19 19:59 check_input.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   844 Nov 19 19:20 create_array.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   480 Nov 19 19:20 create_child.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   713 Nov 19 19:20 exec_path.c
+.br
+-rw-rw-r-- 1 vagrant vagrant  2148 Nov 19 19:20 find_command.c
+.br
+-rw-rw-r-- 1 vagrant vagrant   375 Nov 19 19:20 find_path.c
+.br
+sHell$
+
+.SH SEE ALSO
+.LP
+sh(1)
+
+.SH AUTHORS
+.LP
+Binita Rai, Kevan Lucchini
+
+
