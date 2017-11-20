@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			j++;
-			result += spec_func(args, format[j]); /* each loop makes successive calls to va_arg */
+			result += spec_func(args, format[j]);
 		}
 	}
 	va_end(args);

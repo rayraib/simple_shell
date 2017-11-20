@@ -1,9 +1,17 @@
 #include "shell.h"
+/**
+* _my_exit - exits a proces
+* @buffer: Pointer to string of chars
+*/
 void _my_exit(char *buffer)
 {
 	free(buffer);
 	exit(1);
 }
+/**
+* _print_env - prints environment variables to stdout
+* @buffer: pointer to string of char
+*/
 void _print_env(char *buffer)
 {
 	int i;

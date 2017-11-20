@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "shell.h"
 
 /**
  * spec_func - chooses function based on format specifier
@@ -10,19 +10,9 @@ int spec_func(va_list args, char c)
 {
 	int i = 0;
 	func_f arg_list[] = {
-/*		{'c', print_char},*/
 		{'s', print_str},
 		{'d', print_int},
 		{'i', print_int},
-	/*	{'u', print_unsigned},
-		{'b', print_binary},
-		{'o', print_octal},
-		{'x', print_hex_lower},
-		{'X', print_hex_upper},
-		{'S', custom_s},
-		{'r', print_rev},
-		{'R', print_rot},
-	*/	
 		{'\0', NULL},
 	};
 

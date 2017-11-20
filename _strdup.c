@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
  * _strdup - copy string to a new mememory location
- * @file: pointer to string that is to be copied
+ * @s: pointer to string that is to be copied
  * Return: pointer to newly allocated memory location
  */
-char * _strdup(char *s)
+char *_strdup(char *s)
 {
 	int len;
 	char *new_location;
