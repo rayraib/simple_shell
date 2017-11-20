@@ -13,7 +13,6 @@ int not_valid(int z, char *ar, int t_c, char *buffer, char *f_c, char **array)
 {
 	struct stat *st;
 	int child_return;
-	int ch = 2;
 
 	st = malloc(sizeof(struct stat));
 	if (st == NULL)
@@ -23,7 +22,7 @@ int not_valid(int z, char *ar, int t_c, char *buffer, char *f_c, char **array)
 	}
 	if (stat(f_c, st) == 0)
 	{
-		child_return = create_child(z, ch, f_c, ar, array);
+		child_return = create_child(z, f_c, ar, array);
 		if (child_return == -1)/* failure at child process */
 		{
 			free(st);

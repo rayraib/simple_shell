@@ -39,7 +39,7 @@ int find_command(int z, char *arg, int index, char *filename, char **array)
 		{
 			free(array[0]);
 			array[0] = f_arg;
-			child_ret = create_child(z, ch, filename, arg, array);
+			child_ret = create_child(z, filename, arg, array);
 			if (child_ret == -1)
 				return (1);
 			free_things(buffer, dir, st, path, f_arg);

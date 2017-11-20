@@ -8,9 +8,9 @@
 * @f_com : pointer to string of chars(first command arg input in shell)
 * Return: 0 if Success, -1 if failure
 */
-int create_child(int z, int ch, char *f_com, char *arg, char **array)
+int create_child(int z, char *f_com, char *arg, char **array)
 {
-	int status;
+	int status, ch;
 	pid_t child_pid;
 
 	ch = 2;
