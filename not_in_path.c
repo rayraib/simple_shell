@@ -7,7 +7,7 @@
 * @token_cnt: Count of tokens
 * Return: 0 succes, otherwise -1 for failure
 */
-int not_valid(int token_cnt, char *buffer, char *f_com, char **array)
+int not_valid(char *ar, int token_cnt, char *buffer, char *f_com, char **array)
 {
 	struct stat *st;
 	int child_return;
@@ -20,7 +20,7 @@ int not_valid(int token_cnt, char *buffer, char *f_com, char **array)
 	}
 	if (stat(f_com, st) == 0)
 	{
-		child_return = create_child(array);
+		child_return = create_child(ar, array);
 		if (child_return == -1)/* failure at child process */
 		{
 			free(st);

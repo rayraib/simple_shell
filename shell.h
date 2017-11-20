@@ -7,6 +7,25 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
+#include <stdarg.h>
+/**
+ * struct func_e - struct to store specifier with respective function
+ * @c: format specifier
+ * @f: function ptr that takes parameter of type va_list
+ */
+typedef struct func_e
+{
+	char c;
+	int (*f)(va_list);
+} func_f;
+
+int _printf(const char *format, ...);
+int print_rev(va_list ap);
+int _putchar(int c);
+int print_char(va_list ap);
+int print_str(va_list ap);
+int print_int(va_list ap);
+int spec_func(va_list args, char c);
 typedef struct run_built
 {
 	char *builtin;
@@ -16,7 +35,7 @@ void check4builtin(char *buffer);
 void _my_exit(char *buffer);
 void _print_env(char *buffer);
 void err_msg(char *arg);
-int not_valid(int token_cnt, char *buffer, char *f_com, char **array);
+int not_valid(char *ar, int token_cnt, char *buffer, char *f_com, char **array);
 char *exec_path(char *dir, char *filename);
 extern char **environ;
 int _strlen(char *s);
@@ -27,7 +46,7 @@ int find_command(char *arg, int index, char *filename, char **array);
 char  *_strcpy(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strdup(char *s);
-int create_child(char **array);
+int create_child(char *arg, char **array);
 int token_count(char*f_com, char *buffer);
 char **create_array(char *first_com, int token_cnt, char *buffer);
 void free_array(int token_cnt, char **array);

@@ -37,7 +37,7 @@ int find_command(char *arg, int index, char *filename, char **array)
 		{
 			free(array[0]);
 			array[0] = f_arg;
-			child_ret = create_child(array);
+			child_ret = create_child(arg, array);
 			if (child_ret == -1)
 				return (1);
 			free_things(buffer, dir, st, path, f_arg);
@@ -48,8 +48,8 @@ int find_command(char *arg, int index, char *filename, char **array)
 		free(f_arg);
 	} while (token != NULL);
 	free(array[0]);
-	final_free(buffer, st, path);
 	err_msg(arg);
+	final_free(buffer, st, path);
 	return (-1);
 }
 /**
@@ -93,6 +93,5 @@ void final_free(char *buffer, struct stat *st, char *path)
 */
 void err_msg(char *arg)
 {
-	write(2, arg, _strlen(arg));
-	perror(" ");
+	_printf("%s: counter: first_Command: not found\n", arg);
 }

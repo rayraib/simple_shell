@@ -4,7 +4,7 @@
  * @array: pointer to array of strings
  * Return: 0 if Success, -1 if failure
  */
-int create_child(char **array)
+int create_child(char *arg, char **array)
 {
 	int status;
 	pid_t child_pid;
@@ -18,7 +18,8 @@ int create_child(char **array)
 	if (child_pid == 0)
 	{
 		execve(array[0], array, NULL);
-		perror("./sHELL$");
+		/*perror("./sHELL$");*/
+		err_msg(arg);
 		exit(-1);
 	}
 	else

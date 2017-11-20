@@ -29,7 +29,7 @@ int main(int ac, char **argv)
 								/*array of pointers to args*/
 		if (array == NULL)
 			return (-1);
-		not_valid_ret = not_valid(token_counter, buffer, first_command, array);/*command executed */
+		not_valid_ret = not_valid(argv[0], token_counter, buffer, first_command, array);/*command executed */
 		if (not_valid_ret == 0 || not_valid_ret == 1)
 		{
 			free(first_command);
