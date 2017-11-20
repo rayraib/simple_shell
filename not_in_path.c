@@ -20,7 +20,7 @@ int not_valid(int z, char *ar, int t_c, char *buffer, char *f_c, char **array)
 		free(st);
 		return (-1);
 	}
-	if (stat(f_c, st) == 0)
+	if (f_c[0] == '/' && stat(f_c, st) == 0)
 	{
 		child_return = create_child(z, f_c, ar, array);
 		if (child_return == -1)/* failure at child process */

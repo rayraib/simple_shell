@@ -13,12 +13,12 @@ void final_free(char *buffer, struct stat *st, char *path);
 */
 int find_command(int z, char *arg, int index, char *filename, char **array)
 {
-	char *buffer, *dir, *cur_dir, *path, *token, *f_arg;
+	char *buffer, *dir, *path, *token, *f_arg;
 	char *delim = "=:\n";
 	int child_ret, ch = 1;
 	struct stat *st = NULL;
 
-	buffer = cur_dir = path = token = f_arg = NULL;
+	buffer = path = token = f_arg = NULL;
 	path = _strdup(environ[index]);/*copy the PATH env varible string */
 	if (path == NULL)
 		return (-1);
