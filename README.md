@@ -9,7 +9,7 @@
 * [How to Install](#how-to-install)
 * [Compilation](#compilation)
 * [Example Code](#example-Code)
-* [To do List](#to-do-List]
+* [To do List](#to-do-list]
 * [Authors](#authors)
 
 ## Synopsis
