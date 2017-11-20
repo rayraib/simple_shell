@@ -83,7 +83,6 @@ total 100
 -rw-rw-r-- 1 vagrant vagrant   545 Nov 19 19:20 token_count.c
 sHell$
 ```
-## To do List
 
 ## Authors
 
