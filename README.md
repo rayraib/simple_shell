@@ -1,7 +1,7 @@
-## Simple_Shell Project
+## Simple_Shell Project ![seashell](http://clipartix.com/wp-content/uploads/2016/06/Seashell-sea-shell-clip-art-image.jpg)
 
 ## Table of Contents
-* [Synopsis](#Synopsis)
+* [Synopsis](#synopsis)
 * [Environment](#Environment)
 * [Repository Contents](#Repository-Contents)
 * [Features](#Features)
@@ -12,7 +12,7 @@
 * [To do List](#To-do-List]
 * [Authors](#Authors)
 
-### Synopsis
+## Synopsis
 The objective of the simple_shell project is to learn and implement the base functionality of a UNIX command line interface. Working on this project helped my partner and I learn how to manipulate the environment of processes and how to create them, as well as understanding how a shell uses the `PATH` environment variable to find programs and execute them with the `execve` system call.
 
 ### Environment
@@ -87,8 +87,8 @@ sHell$
 
 ### Authors
 
-* Binita Rai [**Github**](https://github.com/rayraib)[**Twitter**](https://twitter.com/rayrai_b)
-* Kevan Lucchini [**Github**](https://github.com/kevanlucc)[**Twitter**](https://twitter.com/kevan_lucchini)
+* Binita Rai [**Github**](https://github.com/rayraib) | [**Twitter**](https://twitter.com/rayrai_b)
+* Kevan Lucchini [**Github**](https://github.com/kevanlucc) | [**Twitter**](https://twitter.com/kevan_lucchini)
 
 <p align="center">
 <a href="https://www.holbertonschool.com"><img src="https://intranet.hbtn.io/assets/holberton-logo-simplified-d4e8a1e8bf5ad93c8c3ce32895b4b53749b477b7ba7342d7f064e6883bcd3be2.png"></a>
