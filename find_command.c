@@ -101,5 +101,5 @@ void err_msg(int count, int check, char *arg, char *filename)
 	if (check == 1)
 		_printf("%s: %d: %s: not found\n", arg, count, filename);
 	if (check == 2)
-		_printf("%s: %d: %s: illegal option\n", arg, count, filename);
+		_printf("%s: %d: %s: Permission denied\n", filename, count, arg);
 }

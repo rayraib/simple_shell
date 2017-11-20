@@ -13,6 +13,7 @@ int create_child(int z, int ch, char *f_com, char *arg, char **array)
 	int status;
 	pid_t child_pid;
 
+	ch = 2;
 	child_pid = fork();
 	if (child_pid == -1)/*child process not created */
 	{
@@ -22,7 +23,6 @@ int create_child(int z, int ch, char *f_com, char *arg, char **array)
 	if (child_pid == 0)
 	{
 		execve(array[0], array, NULL);
-		perror(" ");
 		err_msg(z, ch, f_com, arg);
 		exit(-1);
 	}
