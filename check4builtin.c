@@ -1,4 +1,8 @@
 #include "shell.h"
+/**
+* check4builtin - checks if the buffer contains string "exit" or "env"
+* @buffer: Pointer to string to check
+*/
 void check4builtin(char *buffer)
 {
 	buil_t run_built[] = {

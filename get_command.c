@@ -9,7 +9,7 @@ char *get_command(char *buffer)
 	char *first_command = NULL;
 	char *copy_string = NULL;
 	char *token = NULL;
-	char *delim = " \n";
+	char *delim = "\n ";
 
 	copy_string = _strdup(buffer);
 	if (copy_string == NULL)

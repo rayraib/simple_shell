@@ -1,17 +1,21 @@
 #include "shell.h"
 /**
 * main - entry point to a basic functional shell
+* @ac: count of arguments passed
+* @argv: Pointer to an array of pointer to string of arguments passed in cmdl
 * Return: 0 succes, otherwise -1
 */
 int main(int ac, char **argv)
 {
-	char *buffer, *first_command = NULL;
+	char *buffer, *fc = NULL;
 	char **array = NULL;
-	int token_counter, index, not_valid_ret;/*, command_ret;*/
+	int z, tok_cnt, index, not_va_ret;/*, command_ret;*/
 	(void) ac;
 
+	z = 0;
 	while (1)
 	{
+		z++;
 		buffer = check_input();/*gets arguments from stdin*/
 		if (buffer == NULL)
 		/*	free(buffer);*/
@@ -19,26 +23,26 @@ int main(int ac, char **argv)
 		index = find_path();/*index of PATH varible*/
 		if (index == -1)
 			continue;
-		first_command = get_command(buffer);/*get the first argument*/
-		if (first_command == NULL)
+		fc = get_command(buffer);/*get the first argument*/
+		if (fc == NULL)
 			continue;
-		token_counter = token_count(first_command, buffer);/*number of args passed*/
-		if (token_counter == -1)
+		tok_cnt = token_count(fc, buffer);/*number of args passed*/
+		if (tok_cnt == -1)
 			continue;
-		array = create_array(first_command, token_counter, buffer);
+		array = create_array(fc, tok_cnt, buffer);
 								/*array of pointers to args*/
 		if (array == NULL)
 			return (-1);
-		not_valid_ret = not_valid(token_counter, buffer, first_command, array);/*command executed */
-		if (not_valid_ret == 0 || not_valid_ret == 1)
+		not_va_ret = not_valid(z, argv[0], tok_cnt, buffer, fc, array);
+		if (not_va_ret == 0 || not_va_ret == 1)
 		{
-			free(first_command);
+			free(fc);
 			continue;
 		}
-		find_command(argv[0], index, first_command, array);/*find cmmnd & exec*/
+		find_command(z, argv[0], index, fc, array);/*find cmmnd & exec*/
 		free(buffer);
-		free_array(token_counter, array);
-		free(first_command);
+		free_array(tok_cnt, array);
+		free(fc);
 	}
 	return (0);
 }

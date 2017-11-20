@@ -1,9 +1,10 @@
 #include "shell.h"
 /**
- * token_count - counts the number of tokens
- * @buffer: Pointer to string to tokenize
- * Return: number of tokens
- */
+* token_count - counts the number of tokens
+* @f_com: pointer to string of char- first command input in shell
+* @buffer: Pointer to string to tokenize
+* Return: number of tokens
+*/
 int token_count(char *f_com, char *buffer)
 {
 	char *string_copy = NULL;

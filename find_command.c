@@ -4,16 +4,18 @@ char *get_first_dir(char *path);
 void final_free(char *buffer, struct stat *st, char *path);
 /**
 * find_command - splits directory, goes into and checks for filename
+* @z: counter of how many times the main function has looped
 * @index: index of where PATH variable is
 * @filename: command to look for
+* @arg: arg[0], executables's name
 * @array: pointer to an array of poitners to char
 * Return: success 0, otherwise -1
 */
-int find_command(char *arg, int index, char *filename, char **array)
+int find_command(int z, char *arg, int index, char *filename, char **array)
 {
 	char *buffer, *dir, *cur_dir, *path, *token, *f_arg;
 	char *delim = "=:\n";
-	int child_ret;
+	int child_ret, ch = 1;
 	struct stat *st = NULL;
 
 	buffer = cur_dir = path = token = f_arg = NULL;
@@ -37,7 +39,7 @@ int find_command(char *arg, int index, char *filename, char **array)
 		{
 			free(array[0]);
 			array[0] = f_arg;
-			child_ret = create_child(array);
+			child_ret = create_child(z, ch, filename, arg, array);
 			if (child_ret == -1)
 				return (1);
 			free_things(buffer, dir, st, path, f_arg);
@@ -48,8 +50,8 @@ int find_command(char *arg, int index, char *filename, char **array)
 		free(f_arg);
 	} while (token != NULL);
 	free(array[0]);
+	err_msg(z, ch, arg, filename);
 	final_free(buffer, st, path);
-	err_msg(arg);
 	return (-1);
 }
 /**
@@ -90,9 +92,14 @@ void final_free(char *buffer, struct stat *st, char *path)
 /**
 * err_msg - prints message to stdou
 * @filename: pointer to char string
+* @count: count of how many times the main function has looped
+* @check: flag for where the error msg originatd from
+* @arg: name of the executable file
 */
-void err_msg(char *arg)
+void err_msg(int count, int check, char *arg, char *filename)
 {
-	write(2, arg, _strlen(arg));
-	perror(" ");
+	if (check == 1)
+		_printf("%s: %d: %s: not found\n", arg, count, filename);
+	if (check == 2)
+		_printf("%s: %d: %s: illegal option\n", arg, count, filename);
 }

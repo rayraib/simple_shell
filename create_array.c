@@ -2,6 +2,7 @@
 /**
 * create_array - create an array of pointers to string(commands from stdin)
 * @token_cnt: Size of the array to be allocated
+* @first_com: Pointer to string of first command arg from input in cmdline
 * @buffer: Pointer to string of chars(commands frm stdin)
 * Return: Pointer to the array of pointers
 */
