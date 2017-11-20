@@ -2,20 +2,20 @@
 
 ## Table of Contents
 * [Synopsis](#synopsis)
-* [Environment](#Environment)
-* [Repository Contents](#Repository-Contents)
-* [Features](#Features)
-* [Builtins](#Builtins)
-* [How to Install](#How-to-install)
-* [Compilation](#Compilation)
-* [Example Code](#Example-Code)
-* [To do List](#To-do-List]
-* [Authors](#Authors)
+* [Environment](#environment)
+* [Repository Contents](#repository-contents)
+* [Features](#features)
+* [Builtins](#builtins)
+* [How to Install](#how-to-install)
+* [Compilation](#compilation)
+* [Example Code](#example-Code)
+* [To do List](#to-do-List]
+* [Authors](#authors)
 
 ## Synopsis
 The objective of the simple_shell project is to learn and implement the base functionality of a UNIX command line interface. Working on this project helped my partner and I learn how to manipulate the environment of processes and how to create them, as well as understanding how a shell uses the `PATH` environment variable to find programs and execute them with the `execve` system call.
 
-### Environment
+## Environment
 Tested on `Ubuntu 14.04 LTS` via Vagrant in VirtualBox.
 
 ## Repository Contents
@@ -38,19 +38,19 @@ Tested on `Ubuntu 14.04 LTS` via Vagrant in VirtualBox.
 | [shell.h](shell.h) | header file |
 | [token_count.c](token_count.c) | counts the number of tokens in a string |
 
-### Features
+## Features
 * Handles the `PATH`
 * Handles command lines with arguments
 
-### Builtins
+## Builtins
 * exit
 * env
 
-### How to install
+## How to install
 To install our shell, clone the repository to a directory, then run the executable.
 `https://github.com/kevanlucc/simple_shell.git`
 
-### Compilation
+## Compilation
 Compile the code with the following flags: 
 `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
 
@@ -83,9 +83,9 @@ total 100
 -rw-rw-r-- 1 vagrant vagrant   545 Nov 19 19:20 token_count.c
 sHell$
 ```
-### To do List
+## To do List
 
-### Authors
+## Authors
 
 * Binita Rai [**Github**](https://github.com/rayraib) | [**Twitter**](https://twitter.com/rayrai_b)
 * Kevan Lucchini [**Github**](https://github.com/kevanlucc) | [**Twitter**](https://twitter.com/kevan_lucchini)
