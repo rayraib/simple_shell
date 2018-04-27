@@ -1,4 +1,4 @@
-## Simple_Shell Project ![seashell](http://clipartix.com/wp-content/uploads/2016/06/Seashell-sea-shell-clip-art-image.jpg)
+## Simple_Shell Project ![seashell](http://www.lostsaloon.com//wp-content/uploads/linux-ls-command.png)
 
 ## Table of Contents
 * [Synopsis](#synopsis)
@@ -7,7 +7,7 @@
 * [Features](#features)
 * [Builtins](#builtins)
 * [How to Install](#how-to-install)
-* [Compilation](#compilation)
+* [How to Run](#To run)
 * [Example Code](#example-code)
 * [To do List](#to-do-list)
 * [Authors](#authors)
@@ -50,9 +50,12 @@ Tested on `Ubuntu 14.04 LTS` via Vagrant in VirtualBox.
 To install our shell, clone the repository to a directory, then run the executable.
 `https://github.com/kevanlucc/simple_shell.git`
 
-## Compilation
+## To run
 Compile the code with the following flags: 
 `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
+
+Run the executable:
+`./hsh`
 
 ###### Example code
 ```
