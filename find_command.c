@@ -1,6 +1,5 @@
 #include "shell.h"
 char *get_first_dir(char *path);
-/*void err_msg(char *filename);*/
 void final_free(char *buffer, struct stat *st, char *path);
 /**
 * find_command - splits directory, goes into and checks for filename
@@ -55,7 +54,7 @@ int find_command(int z, char *arg, int index, char *filename, char **array)
 	return (-1);
 }
 /**
-* get_first_dir - gets the first directory in path
+* get_first_dir - gets the first directory in PATH
 * @path: PATH env variable string
 * Return: pointer to the first dir
 */
