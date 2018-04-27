@@ -1,15 +1,15 @@
 #include "shell.h"
 /**
-* main - entry point to a basic functional shell
-* @ac: count of arguments passed
-* @argv: Pointer to an array of pointer to string of arguments passed in cmdl
+* main - Entry point to a basic functional shell
+* @ac: Count of arguments passed
+* @argv: Double Pointer to an array of pointer to string of arguments passed in cmdl
 * Return: 0 succes, otherwise -1
 */
 int main(int ac, char **argv)
 {
 	char *buffer, *fc = NULL;
 	char **array = NULL;
-	int z, tok_cnt, index, not_va_ret;/*, command_ret;*/
+	int z, tok_cnt, index, not_va_ret; /*, command_ret;*/
 	(void) ac;
 
 	z = 0;

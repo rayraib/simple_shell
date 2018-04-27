@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
-* _my_exit - exits a proces
-* @buffer: Pointer to string of chars
+* _my_exit - Exits a process/our shell. execute an Exit command.
+* @buffer: Pointer to string of chars containing arg command.
 */
 void _my_exit(char *buffer)
 {
@@ -9,8 +9,8 @@ void _my_exit(char *buffer)
 	exit(1);
 }
 /**
-* _print_env - prints environment variables to stdout
-* @buffer: pointer to string of char
+* _print_env - Prints environment variables to stdout.
+* @buffer: Pointer to string of char
 */
 void _print_env(char *buffer)
 {

@@ -7,11 +7,12 @@
 * @p: fourth argument
 * @f: fifth arguemnt to free
 */
-void free_things(char *b, char *d, struct stat *st, char *p, char *f)
+void free_things(char *buffer, char *delim,
+				  struct stat *stat, char *path, char *first_arg)
 {
-	free(b);
-	free(d);
-	free(st);
-	free(p);
-	free(f);
+	free(buffer);
+	free(delim);
+	free(stat);
+	free(path);
+	free(first_arg);
 }
