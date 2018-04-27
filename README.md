@@ -1,4 +1,5 @@
-##                                   Simple_Shell Project ![seashell](http://www.lostsaloon.com//wp-content/uploads/linux-ls-command.png)
+## Simple_Shell Project 
+![seashell](http://www.lostsaloon.com//wp-content/uploads/linux-ls-command.png)
 
 ## Table of Contents
 * [Synopsis](#synopsis)
